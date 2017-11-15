@@ -12,21 +12,22 @@
 
         foreach ($users as $user) {
 //          var_dump($user);
-            $style = '';
-            if($_GET['bid'] == $user['uid']) {
-                echo '<style>a :visited {color:red;}</style>';
-            }
-                echo '<a href="index.php?function=entries_public&bid='.$user['uid'].'" title="Blog auswählen"><h4>'.$user['name'].'</h4></a>';
-            $_GET['bid'] = $user['uid'];
-            $entries = getEntries($user['uid']);
-            foreach ($entries as $entry){
 
+
+            echo '<a href="index.php?function=entries_public&bid='.$user['uid'].'" title="Blog auswählen"><h4>'.$user['name'].'</h4></a>';
+            $_GET['bid'] = $user['uid'];
+            if($_GET['bid'] == $user['uid']) {
+
+                echo '<style> a:visited {color:red;}</style>';
             }
+
 
         }
 
 
 ?>
+
+
 <!--<div></div>-->
 <!--<div><a href='index.php?function=entries_public&bid=2' title='Blog auswählen'><h4>Hans Hinterseer</h4></a></div>-->
 <!--<div><a href='index.php?function=entries_public&bid=3' title='Blog auswählen'><h4>Sonja Sauser</h4></a></div>-->

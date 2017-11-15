@@ -24,6 +24,7 @@
       }
       return "Blog wurde nicht ausgewählt";
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -51,6 +52,7 @@
 		<a class="navbar-brand"><?php echo getMenuTitle(); ?></a>
       </div>
       <ul class="nav navbar-nav">
+<!--          --><?php //echo getMenu(); ?>
 		<?php
 		  echo "<li><a href='index.php?function=login&bid=$blogId'>Login</a></li>";
 		  echo "<li><a href='index.php?function=blogs&bid=$blogId'>Blog wählen</a></li>";
