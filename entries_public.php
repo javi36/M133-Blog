@@ -4,14 +4,12 @@
 
   // Nachfolgend das Beispiel einer Ausgabe in HTML, dieser Teil muss mit einer Schlaufe über alle Blog-Beiträge und der Ausgabe mit PHP ersetzt werden
 
-$users = getUserNames();
 
-foreach ($users as $user) {
-    $entries = getEntries($user['uid']);
+    $entries = getEntries($_GET['bid']);
     foreach ($entries as $entry) {
         $date = date("d.m.Y", strtotime($entry['datetime']));
-        echo '<li><a href="index.php?function=entry_public&bid=' . $user['uid'] . '&eid=' . $entry['eid'] . '">' . $entry['title'].'</a></li>';
-    }
+        echo '<li><a href="index.php?function=entry_public&bid=' . $_GET['bid'] . '&eid=' . $entry['eid'] . '">' . $entry['title'].'</a></li>';
+
 }
 
 ?>

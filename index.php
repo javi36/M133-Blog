@@ -15,15 +15,7 @@
   if (isset($_GET['bid'])) $blogId = $_GET['bid'];
   else $blogId = 0;
 
-  function getMenuTitle(){
-      foreach (getUserNames() as $username){
-          if(!isset($_GET['bid'])) {break;} else
-          if ($_GET['bid'] == $username['uid']){
-              return $username['name'];
-          }
-      }
-      return "Blog wurde nicht ausgewählt";
-    }
+
 
 ?>
 <!DOCTYPE html>
@@ -52,12 +44,8 @@
 		<a class="navbar-brand"><?php echo getMenuTitle(); ?></a>
       </div>
       <ul class="nav navbar-nav">
-<!--          --><?php //echo getMenu(); ?>
-		<?php
-		  echo "<li><a href='index.php?function=login&bid=$blogId'>Login</a></li>";
-		  echo "<li><a href='index.php?function=blogs&bid=$blogId'>Blog wählen</a></li>";
-		  echo "<li><a href='index.php?function=entries_public&bid=$blogId'>Beiträge anzeigen</a></li>";
-		?>
+<!--          Zeigt die Navigation an-->
+          <?php echo getMenu(); ?>
       </ul>
 	</div>
   </nav>
