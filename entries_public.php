@@ -7,8 +7,8 @@
 
     $entries = getEntries($_GET['bid']);
     foreach ($entries as $entry) {
-        $date = date("d.m.Y", strtotime($entry['datetime']));
-        echo '<li><a href="index.php?function=entry_public&bid=' . $_GET['bid'] . '&eid=' . $entry['eid'] . '">' . $entry['title'].'</a></li>';
+        $date = gmdate("m.d.y", $entry['datetime']);
+        echo '<li><a href="index.php?function=entry_public&bid=' . $_GET['bid'] . '&eid=' . $entry['eid'] . '">'.$entry['title'].", ".$date.'</a></li>';
 
 }
 
