@@ -14,18 +14,28 @@
 
   // Prüft, ob der Benutzer angemeldet ist
   function getUserIdFromSession() {
-	if (isset($_SESSION['uid'])) return $_SESSION['uid'];
-	else return 0;
+      $sessionUserId = $_SESSION['userId'];
+      if (!isset($sessionUserId)){
+          return 0;
+      }
+      return $sessionUserId;
   }
     // Setzt der Benutzername oben links
-    function getMenuTitle(){
-        foreach (getUserNames() as $username){
-            if(!isset($_GET['bid'])) {break;} else
-                if ($_GET['bid'] == $username['uid']){
-                    return $username['name'];
-                }
+    function getMenuTitle() {
+        $loggedInUser = getUserIdFromSession();
+        if ($loggedInUser != 0) {
+            return 'Wilkommen ' . getUserName($loggedInUser);
+        } else {
+            foreach (getUserNames() as $username) {
+                if (!isset($_GET['bid'])) {
+                    break;
+                } else
+                    if ($_GET['bid'] == $username['uid']) {
+                        return $username['name'];
+                    }
+            }
+            return "Blog wurde nicht ausgewählt";
         }
-    return "Blog wurde nicht ausgewählt";
     }
     // Zeit die Navigation an
     function getMenu(){

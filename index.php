@@ -14,7 +14,7 @@
   // Prüfung, ob bereits ein Blog ausgewählt worden ist
   if (isset($_GET['bid'])) $blogId = $_GET['bid'];
   else $blogId = 0;
-
+    $userId = getUserIdFromSession();
 
 
 ?>

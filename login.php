@@ -1,16 +1,33 @@
 <?php
-  $meldung = "";
-  $email = "";
-  $passwort = "";
-  // $_SERVER['PHP_SELF'] = login.php in diesem Fall (also die PHP-Datei, die gerade ausgeführt wird).
-  // Mit andern Worten: Nach Senden des Formulars wird wieder login.php aufgerufen.
-  // Die Funktionen zur Überprüfung, ob die Login-Daten gültig sind, muss also hier oben im PHP-Teil stehen!
-  // Wenn Login-Daten korrekt sind:
-  // Session-Variable mit Benutzer-ID setzen und Wechsel in Memberbereich
-  // $_SESSION['uid'] = $uid;	
-  // header('Location: index.php?function=entries_member');
-  // Wenn Formular gesendet worden ist, die Login-Daten aber nicht korrekt sind:
-  // Unten auf der Seite Anzeige der Fehlermeldung.
+$meldung = "";
+
+$email = "";
+$passwort = "";
+
+if (isset($_POST['form-username'])) {
+    $email = $_POST['form-username'];
+    $passwort = $_POST['form-password'];
+
+    $user = getUserIdFromDb($email, $passwort);
+
+    if ($user == 0) {
+        $meldung = "Falscher Benutzername oder Passwort";
+    } else {
+        $_SESSION['userId'] = $user;
+        header('Location: index.php?function=entries_private');
+    }
+}
+
+
+// $_SERVER['PHP_SELF'] = login.php in diesem Fall (also die PHP-Datei, die gerade ausgeführt wird).
+// Mit andern Worten: Nach Senden des Formulars wird wieder login.php aufgerufen.
+// Die Funktionen zur Überprüfung, ob die Login-Daten gültig sind, muss also hier oben im PHP-Teil stehen!
+// Wenn Login-Daten korrekt sind:
+// Session-Variable mit Benutzer-ID setzen und Wechsel in Memberbereich
+// $_SESSION['uid'] = $uid;
+// header('Location: index.php?function=entries_member');
+// Wenn Formular gesendet worden ist, die Login-Daten aber nicht korrekt sind:
+// Unten auf der Seite Anzeige der Fehlermeldung.
 ?>
 <!--<form method="post" action="--><?php //echo $_SERVER['PHP_SELF']."?function=login"; ?><!--">-->
 <!--  <label for="email">Benutzername</label>-->
@@ -24,7 +41,6 @@
 <!--  <div>-->
 <!--	<button type="submit">senden</button>-->
 <!--  </div>-->
-
 
 
 <!DOCTYPE html>
@@ -72,20 +88,27 @@
                         <div class="form-top-left">
                             <h3>Login </h3>
                             <p>Benutzernamen und Passwort zur Anmledung</p>
+                            <?php if (!empty($meldung)) {
+                                echo
+                                    '<div class="form-check has-danger"><label class="form-check-label">' . $meldung . '</label></div>';
+                            } ?>
                         </div>
                         <div class="form-top-right">
                             <i class="fa fa-lock" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="form-bottom">
-                        <form role="form" action="" method="post" class="login-form">
+                        <form role="form" action="<?php echo $_SERVER['PHP_SELF'] . "?function=login"; ?>" method="post"
+                              class="login-form">
                             <div class="form-group">
                                 <label class="sr-only" for="form-username">Benuzername</label>
-                                <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+                                <input type="text" name="form-username" placeholder="Username..."
+                                       class="form-username form-control" id="form-username">
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="form-password">Passwort</label>
-                                <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+                                <input type="password" name="form-password" placeholder="Password..."
+                                       class="form-password form-control" id="form-password">
                             </div>
                             <button type="submit" class="btn">Sign in!</button>
                         </form>
