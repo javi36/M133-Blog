@@ -14,11 +14,15 @@
 
   // Prüft, ob der Benutzer angemeldet ist
   function getUserIdFromSession() {
-      $sessionUserId = $_SESSION['userId'];
-      if (!isset($sessionUserId)){
+      if (isset($_SESSION['uid'])) {
+          $sessionUserId = $_SESSION['uid'];
+          if (!isset($sessionUserId)) {
+              return 0;
+          }
+          return $sessionUserId;
+      } else{
           return 0;
       }
-      return $sessionUserId;
   }
     // Setzt der Benutzername oben links
     function getMenuTitle() {
@@ -39,10 +43,20 @@
     }
     // Zeit die Navigation an
     function getMenu(){
-        if (isset($_GET['bid'])) $blogId = $_GET['bid'];
-        else $blogId = 0;
-        echo "<li><a href='index.php?function=login&bid=$blogId'>Login</a></li>";
-        echo "<li><a href='index.php?function=blogs&bid=$blogId'>Blog wählen</a></li>";
-        echo "<li><a href='index.php?function=entries_public&bid=$blogId'>Beiträge anzeigen</a></li>";
+        $loggedInUser = getUserIdFromSession();
+        if ($loggedInUser != 0) {
+            if (isset($_GET['bid'])) $blogId = $_GET['bid'];
+            else $blogId = 0;
+            echo "<li><a href='index.php?function=logout&bid=$blogId'>Logout</a></li>";
+            echo "<li><a href='index.php?function=entries_public&bid=$blogId'>Beiträge anzeigen</a></li>";
+            echo "<li><a >Beitrag hinzufügen</a></li>";
+            echo "<li><a >Beitrag ändern</a></li>";
+        }else {
+            if (isset($_GET['bid'])) $blogId = $_GET['bid'];
+            else $blogId = 0;
+            echo "<li><a href='index.php?function=login&bid=$blogId'>Login</a></li>";
+            echo "<li><a href='index.php?function=blogs&bid=$blogId'>Blog wählen</a></li>";
+            echo "<li><a href='index.php?function=entries_public&bid=$blogId'>Beiträge anzeigen</a></li>";
+        }
     }
 ?>

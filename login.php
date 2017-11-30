@@ -1,6 +1,5 @@
 <?php
 $meldung = "";
-
 $email = "";
 $passwort = "";
 
@@ -13,7 +12,7 @@ if (isset($_POST['form-username'])) {
     if ($user == 0) {
         $meldung = "Falscher Benutzername oder Passwort";
     } else {
-        $_SESSION['userId'] = $user;
+        $_SESSION['uid'] = $user;
         header('Location: index.php?function=entries_private');
     }
 }
