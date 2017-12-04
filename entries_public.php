@@ -1,14 +1,12 @@
 <?php
-  // Alle Blogeinträge holen, die Blog-ID ist in der Variablen $blogId gespeichert (wird in index.php gesetzt)
-  // Hier Code... (Schlaufe über alle Einträge dieses Blogs)
+// Alle Blogeinträge holen, die Blog-ID ist in der Variablen $blogId gespeichert (wird in index.php gesetzt)
+// (Schlaufe über alle Einträge dieses Blogs)
 
-  // Nachfolgend das Beispiel einer Ausgabe in HTML, dieser Teil muss mit einer Schlaufe über alle Blog-Beiträge und der Ausgabe mit PHP ersetzt werden
-
-
-    $entries = getEntries($_GET['bid']);
-    foreach ($entries as $entry) {
-        $date = gmdate("m.d.y", $entry['datetime']);
-        echo '<li><a href="index.php?function=entry_public&bid=' . $_GET['bid'] . '&eid=' . $entry['eid'] . '">'.$entry['title'].", ".$date.'</a></li>';
+// Nachfolgend das Beispiel einer Ausgabe in HTML, dieser Teil muss mit einer Schlaufe über alle Blog-Beiträge und der Ausgabe mit PHP ersetzt werden
+$entries = getEntries($_GET['bid']);
+foreach ($entries as $entry) {
+    $date = gmdate("m.d.y", $entry['datetime']);
+    echo '<li><a href="index.php?function=entry_public&bid=' . $_GET['bid'] . '&eid=' . $entry['eid'] . '">' . $entry['title'] . ", " . $date . '</a></li>';
 
 }
 

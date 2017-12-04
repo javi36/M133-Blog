@@ -17,7 +17,6 @@
 
   $userId = getUserIdFromSession();
 
-
 ?>
 <!DOCTYPE html>
 <html lang="de">
