@@ -2,36 +2,38 @@
 /**
  * Created by PhpStorm.
  * User: vmadmin
- * Date: 04.12.2017
- * Time: 14:22
+ * Date: 07.12.2017
+ * Time: 13:14
  */
-
-
-$eid = $_GET['eid'];
-$entry = getEntry($eid);
+$inhalt = "";
+$titel = "";
+$loggedUser = getUserIdFromSession();
 
 if(isset($_POST['senden'])) {
-    $titel = $_POST['titel'];
-    $inhalt = $_POST['inhalt'];
-    updateEntry($eid,$titel,$inhalt);
-    header('Location: index.php?function=entries_private');
+    if ($loggedUser != 0) {
+        $inhalt = $_POST['inhalt'];
+        $titel = $_POST['titel'];
+        addEntry($loggedUser, $titel, $inhalt);
+        header('Location: index.php?function=entries_private');
+    }
 }
+
 ?>
 
 <html>
 <div class="container">
     <div class="col-md-8">
-        <form action="" method="POST" >
+        <form action="" method="post">
             <!--  Normales  einzeiliges  Eingabefeld  -->
             <div class="form-group">
-                <label for="input1">Beitragtitel</label>
-                <input  type="text"  name="titel" class="form-control" id="input1" value="<?php echo $entry['title'];?>">
+                <label for="titel">Beitragtitel</label>
+                <input  type="text" name="titel" class="form-control" id="titel" placeholder="Bitte  etwas  eingeben...">
             </div>
 
             <!--  Mehrzeiliges  Eingabefeld  (in  diesem  Fall  3  Zeilen)  -->
             <div class="form-group">
-                <label for="input3">Inhalt</label>
-                <textarea id="input3"  name="inhalt" class="form-control" rows="20"><?php echo $entry['content']; ?></textarea>
+                <label for="inhalt">Inhalt</label>
+                <textarea id="inhalt" name="inhalt" class="form-control" rows="5"></textarea>
             </div>
 
             <!--  Schaltflaeche  als  Button  -->
@@ -40,4 +42,5 @@ if(isset($_POST['senden'])) {
         </form>
     </div>
 </div>
+
 </html>

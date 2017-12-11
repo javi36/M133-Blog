@@ -49,7 +49,7 @@
             else $blogId = 0;
             echo "<li><a href='index.php?function=logout&bid=$blogId'>Logout</a></li>";
             echo "<li><a href='index.php?function=entries_private&bid=$blogId'>Beiträge anzeigen</a></li>";
-            echo "<li><a >Beitrag hinzufügen</a></li>";
+            echo "<li><a href='index.php?function=add_entry&bid=$blogId'>Beitrag hinzufügen</a></li>";
         }else {
             if (isset($_GET['bid'])) $blogId = $_GET['bid'];
             else $blogId = 0;
