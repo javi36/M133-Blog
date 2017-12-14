@@ -9,12 +9,15 @@
 
 $eid = $_GET['eid'];
 $entry = getEntry($eid);
+$currentUser = getUserIdFromSession();
 
 if(isset($_POST['senden'])) {
     $titel = $_POST['titel'];
     $inhalt = $_POST['inhalt'];
-    updateEntry($eid,$titel,$inhalt);
-    header('Location: index.php?function=entries_private');
+    if ($entry['uid'] == $currentUser) {
+        updateEntry($eid, $titel, $inhalt);
+        header('Location: index.php?function=entries_private');
+    }
 }
 ?>
 
