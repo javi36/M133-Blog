@@ -9,6 +9,10 @@
 //überprüft ob der entry ein leeren String zurückgibt, ansonsten gibt es eine Fehlermedlung aus.
 //überprüft ob der entry den eingeloggten User gehört.
 //löscht der entsprechende entry und kehrt in der entries_private Seite zurück.
+if (isset($_POST['zurueck'])) {
+    header('Location: index.php?function=entries_private');
+}
+
 if (isset($_POST['submit'])) {
     $eid = $_GET['eid'];
     if (isset($eid)) {
@@ -29,5 +33,6 @@ if (isset($_POST['submit'])) {
 <form action="" method="POST">
     <h4 class="alert-warning">Warning </h4> <br>
     <button type="submit" id="submit" class="btn-warning" name="submit">Endgültig löschen</button>
+    <button type="submit" id="submit" class="btn-warning" name="zurueck">Zurück</button>
 </form>
 </html>
