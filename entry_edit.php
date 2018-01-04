@@ -22,7 +22,7 @@ if(isset($_POST['senden'])) {
 ?>
 
 <html>
-<div class="container">
+<div class="container ">
     <div class="col-md-8">
         <form action="" method="POST" >
             <!--  Normales  einzeiliges  Eingabefeld  -->

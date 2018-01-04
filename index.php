@@ -48,7 +48,7 @@
       </ul>
 	</div>
   </nav>
-  <div class="container" style="margin-top:80px">
+  <div class="container-fluid" style="margin-top:50px; padding-right: -15px; padding-left: -15px;">
   <?php
     // Für jede Funktion, die mit ?function=xy in der URL übergeben wird, muss eine Datei (in diesem Fall xy.php) existieren.
 	// Diese Datei wird aufgerufen, um den Content der Seite aufzubereiten und anzuzeigen.

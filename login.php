@@ -70,7 +70,7 @@ if (isset($_POST['form-username'])) {
 <div class="top-content">
 
     <div class="inner-bg">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2 text">
                     <h1><strong>Willkommen</strong></h1>
