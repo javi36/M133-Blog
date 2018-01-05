@@ -1,4 +1,10 @@
 <?php
+$users = getUserNames();
+foreach ($users as $user) {
+    if ($_GET['bid'] == $user['uid']) {
+
+    }
+}
 
 ?>
 <link rel="stylesheet" href="css/entries.css">
@@ -11,7 +17,14 @@
         <div class="row">
 
             <div class="col-md-12 col-sm-12">
-                <h1 style="text-align: center" >Willkommen im Blog von '.</h1>
+                <?php
+                $users = getUserNames();
+                foreach ($users as $user) {
+                    if ($_GET['bid'] == $user['uid']) {
+                        echo '<h1 style="text-align: center" >Willkommen im Blog von '.$user['name'].'</h1>';
+                    }
+                }
+                ?>
                 <h3 style="text-align: center; margin-bottom: 100px;">Bei Klick kannst du den ensprechenden Beitrag lesen</h3>
             </div>
         </div>
