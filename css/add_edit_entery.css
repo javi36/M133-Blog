@@ -1,0 +1,25 @@
+.h1{
+    font-size: 50px;
+    color: #FFF2D0
+
+}
+
+.container-fluid{
+    background-image: url('../img/entery.jpg');
+    background-repeat: no-repeat;
+}
+.form-control {
+    background-color: #FFF2D0;
+}
+.form-control:focus {
+    border-color: #C97443;
+}
+
+.btn
+{
+    background-color: #2F4040;
+    border-color: #2F4040;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}

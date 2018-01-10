@@ -21,19 +21,20 @@ if(isset($_POST['senden'])) {
 ?>
 
 <html>
-<div class="container" >
-    <div class="col-md-8">
+<link href="css/add_edit_entery.css" rel="stylesheet" />
+<div class="container" style="padding-top: 50px;" >
+    <div class="col-md-12">
         <form action="" method="post">
             <!--  Normales  einzeiliges  Eingabefeld  -->
             <div class="form-group">
-                <label for="titel">Beitragtitel</label>
+                <label for="titel" class="h1">Beitragtitel</label>
                 <input  type="text" name="titel" class="form-control" id="titel" placeholder="Bitte  etwas  eingeben...">
             </div>
 
             <!--  Mehrzeiliges  Eingabefeld  (in  diesem  Fall  3  Zeilen)  -->
             <div class="form-group">
-                <label for="inhalt">Inhalt</label>
-                <textarea id="inhalt" name="inhalt" class="form-control" rows="5"></textarea>
+                <label for="inhalt" class="h1">Inhalt</label>
+                <textarea id="inhalt" name="inhalt" class="form-control" rows="25"></textarea>
             </div>
 
             <!--  Schaltflaeche  als  Button  -->
@@ -41,6 +42,4 @@ if(isset($_POST['senden'])) {
             <a href="index.php?function=entries_private" class="btn btn-primary btn-lg">Abbrechen</a>
         </form>
     </div>
-</div>
-
 </html>

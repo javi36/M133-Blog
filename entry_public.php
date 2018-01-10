@@ -28,7 +28,7 @@ $date = gmdate("m.d.y", $entry['datetime']);
 </section>
 <div class="container">
     <div class="row">
-        <p>
+        <p class="inhalt">
 <?php
 echo nl2br($entry['content']);
 ?>

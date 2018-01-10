@@ -6,7 +6,9 @@ body {
     color: #888;
     line-height: 30px;
     text-align: center;
-	background-image: url('../img/bild1.jpg');
+	background-image: url('../img/login.jpg');
+	background-repeat: no-repeat;
+
 }
 
 strong { font-weight: 500; }
@@ -38,10 +40,10 @@ img { max-width: 100%; }
 }
 
 .top-content .text {
-	color: #fff;
+	color: #f7dfc5;
 }
 
-.top-content .text h1 { color: #fff; }
+.top-content .text h1 { color: #f7dfc5; }
 
 .form-box {
 	margin-top: 35px;
@@ -62,8 +64,8 @@ img { max-width: 100%; }
 	padding-top: 25px;
 }
 
-.form-top-left h3 { margin-top: 0; color: #fff; }
-.form-top-left p { opacity: 0.8; color: #fff; }
+.form-top-left h3 { margin-top: 0; color: #f7dfc5; }
+.form-top-left p { opacity: 0.8; color: #f7dfc5; }
 
 .form-top-right {
 	float: left;
@@ -90,6 +92,7 @@ img { max-width: 100%; }
 
 .form-bottom form button.btn {
 	width: 100%;
+	background-color: #C97443;
 }
 
 .form-bottom form .input-error {

@@ -58,7 +58,7 @@ if (isset($_POST['form-username'])) {
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/form-elements.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
 
     <!-- Favicon and touch icons -->
 

@@ -1,7 +1,7 @@
 #home {
     background-size: cover;
     background-position: center center;
-    color: #ffffff;
+    color: #f7dfc5;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -15,7 +15,7 @@
 }
 
 .main-contact {
-    background: url('../img/contact-bg.jpg') no-repeat;
+    background: url('../img/Unbenannt.jpg') no-repeat;
 }
 
 .parallax-section {
@@ -43,4 +43,8 @@
         height: 35vh;
     }
 
+}
+
+.inhalt{
+    margin-top: 50px;
 }

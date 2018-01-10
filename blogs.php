@@ -1,5 +1,6 @@
 
             <head>
+                <link href="css/blogs.css" rel="stylesheet" />
             </head>
             <body>
             <div class=\"row\">
@@ -14,9 +15,9 @@
                         foreach ($users as $user) {
                             $counter++;
                             if ($_GET['bid'] == $user['uid']) {
-                                echo '<a href="index.php?function=entries_public&bid=' . $user['uid'] . '" style=" color:red" title="Blog auswählen"><div class = "col-sm-6 userblogs' . $counter . '" style="background-image: url(img/' . $counter . '.jpg);background-repeat:no-repeat; height: 50vh; text-align: center"><h4>' . $user['name'] . '</h4> </div> </a>';
+                                echo '<a href="index.php?function=entries_public&bid=' . $user['uid'] . '" style=" color:#f7dfc5; "  title="Blog auswählen"><div class = "image col-sm-6 userblogs' . $counter . ' " style="background-image: url(img/' . $counter . '.jpg);background-repeat:no-repeat; height: 50vh; text-align: center"><h4>' . $user['name'] . '</h4> </div> </a>';
                             } else {
-                                echo '<a href="index.php?function=entries_public&bid=' . $user['uid'] . '" style="color:black" title="Blog auswählen"><div class = "col-sm-6 userblogs' . $counter . '" style="background-image: url(img/' . $counter . '.jpg);background-repeat:no-repeat;height: 50vh;  text-align: center"><h4>' . $user['name'] . '</h4> </div> </a>';
+                                echo '<a href="index.php?function=entries_public&bid=' . $user['uid'] . '" style="color:#C97443;" title="Blog auswählen"><div class = " image col-sm-6 userblogs' . $counter . '" style="background-image: url(img/' . $counter . '.jpg);background-repeat:no-repeat;height: 50vh;  text-align: center"><h4>' . $user['name'] . '</h4> </div> </a>';
                             }
                         }
                         ?>

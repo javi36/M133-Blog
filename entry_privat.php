@@ -29,8 +29,14 @@ $date = gmdate("m.d.y", $entry['datetime']);
         </div>
     </div>
 </section>
+<div class="container">
+    <div class="row">
+        <p class="inhalt">
 <?php
 if ($entry['uid'] == $currentUser) {
     echo nl2br($entry['content']);
 }
 ?>
+        </p>
+    </div>
+</div>
