@@ -101,12 +101,12 @@ if (isset($_POST['form-username'])) {
                               class="login-form">
                             <div class="form-group">
                                 <label class="sr-only" for="form-username">Benuzername</label>
-                                <input type="text" name="form-username" placeholder="Username..."
+                                <input type="text" name="form-username" value="<?php if (!empty($meldung)) { echo $email;}?>" placeholder="Username..."
                                        class="form-username form-control" id="form-username">
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="form-password">Passwort</label>
-                                <input type="password" name="form-password" placeholder="Password..."
+                                <input type="password" name="form-password" value="<?php if (!empty($meldung)) { echo $passwort;}?>" placeholder="Password..."
                                        class="form-password form-control" id="form-password">
                             </div>
                             <button type="submit" class="btn">Sign in!</button>
