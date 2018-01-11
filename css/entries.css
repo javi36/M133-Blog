@@ -48,6 +48,8 @@
     transition: background-color 0.5s ease;
     background-color: #ffffff;
     text-decoration: none !important;
+    margin-top: 30px;
+    padding: 10px;
 
 }
 .col-md-4:hover {
