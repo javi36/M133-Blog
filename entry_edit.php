@@ -31,7 +31,7 @@ if(isset($_POST['senden'])) {
             <!--  Normales  einzeiliges  Eingabefeld  -->
             <div class="form-group">
                 <label for="titel" class="h1">Beitragtitel</label>
-                <input  type="text" name="titel" class="form-control" id="titel"  placeholder="<?php echo $entry['title'];?>">
+                <input  type="text" name="titel" class="form-control" id="titel" value="<?php echo $entry['title'];?>"  />
             </div>
 
             <!--  Mehrzeiliges  Eingabefeld  (in  diesem  Fall  3  Zeilen)  -->
